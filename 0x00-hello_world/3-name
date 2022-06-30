@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc chmod u+x cisfun | -S $CFILE
