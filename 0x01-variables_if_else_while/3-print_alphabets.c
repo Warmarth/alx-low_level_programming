@@ -7,6 +7,7 @@
  */
 
 int main(void)
+
 {
 	int lw = 'a';
 
@@ -21,8 +22,9 @@ int main(void)
 	while (up <= 'Z')
 	{
 		putchar(up);
-		up += 1
+		up += 1;
 	}
+
 	putchar('\n');
 	return (0);
 }
