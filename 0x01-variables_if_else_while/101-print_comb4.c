@@ -1,32 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - entry point
- * Retune: always return 0
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-int i, j, k;
-for (i = 48; i < 58; i++)
+int d, p, q;
+for (d = '0'; d < '9'; d++)
 {
-for (j = i; j < 58; j++)
+for (p = d + 1; p <= '9'; p++)
 {
-for (k = j; k < 58; k++)
+for (q = p + 1; q <= '9'; q++)
 {
-if (i == j || j == K || i == k)
-(
-continue;
-}
-putchar(i);
-putchar(j);
-putchar(k);
-if (i == 55 && j == 56 && K == 57)
-(
-break;
-)
-else
+if ((p != d) != q)
 {
+putchar(d);
+putchar(p);
+putchar(q);
+if (d == '7' && p == '8')
+	continue;
 putchar(',');
 putchar(',');
 }
