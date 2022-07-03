@@ -13,16 +13,16 @@ for (p = 0; p <= 99; p++)
 {
 for (q = p + 1; q <= 99; q++)
 {
-putchar(p / 10 + 0);
-putchar(p % 10 + 0);
+putchar(p / 10 + 48);
+putchar(p % 10 + 48);
 putchar(' ');
-putchar(q / 10 + 0);
-putchar(q % 10 + 0);
-if (p == 99 && q == 99)
-continue;
+putchar(q / 10 + 48);
+putchar(q % 10 + 48);
+if (p * 100 + q != 9899)
+{
 putchar(',');
 putchar(' ');
-
+}
 }
 }
 putchar('\n');
