@@ -1,20 +1,18 @@
 #include "main.h"
 
 /**
-* main - Prints "Holberton" followed by a new line.
+* main - Prints "_putchar" followed by a new line.
 *
 * Return: Always 0.
 */
 
 int main(void)
 {
-_putchar('p');
-_putchar('u');
-_putchar('t');
-_putchar('c');
-_putchar('h');
-_putchar('a');
-_putchar('r');
+char *sh = "_putchar";
+while (*sh)
+{_putchar(*sh);
+	sh++;
+}
 _putchar('\n');
 return (0);
 }
