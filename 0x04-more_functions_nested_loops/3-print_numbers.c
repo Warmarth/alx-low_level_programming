@@ -1,15 +1,18 @@
 #include "main.h"
 
 /**
- * print_numbers - check the code for Holberton School students.
- * Return: Always 0.
+ * main - Entry point
+ * Return: Always 0 (Success)
  */
+
 void print_numbers(void)
 {
-int num;
-for (num = '0'; num <= '9'; num++)
+int n = 0;
+while (n <= 9)
 {
-_putchar(num);
+_putchar(n + '0');
+num++;
 }
 _putchar('\n');
+return (0);
 }
