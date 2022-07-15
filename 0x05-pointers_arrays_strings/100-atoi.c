@@ -1,20 +1,25 @@
 #include "main.h"
 /**
- * _atoi - Converts a string to an integer.
- * @s: The string to be converted.
- * Return: The integer value of the converted string.
+ * _atoi - check the code for alx School students.
+ * @s: pointer char type
+ * Return: Always 0.
  */
 int _atoi(char *s)
 {
-int sign = 1;
-unsigned int num = 0;
-do {
-if (*s == '-')
-sign *= -1;
-else if (*s >= '0' && *s <= '9')
-num = (num * 10) + (*s - '0');
-else if (num > 0)
-	break;
-} while (*s++);
-return (num * sign);
+int negative = 1, i = 0;
+unsigned int numero = 0;
+
+for (i = 0; s[i] != '\0'; i++)
+{
+if (s[i] == '-')
+negative *= -1;
+
+else if (s[i] >= 0 + '0' && s[i] < 10 + '0')
+numero = numero * 10 + (s[i] - '0');
+
+else if (s[i - 1] >= 0 + '0' && s[i - 1] < 10 + '0')
+break;
+}
+
+return (numero *negative);
 }
