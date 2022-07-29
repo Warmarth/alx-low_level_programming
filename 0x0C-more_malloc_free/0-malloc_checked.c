@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 /**
  * malloc_checked - Allocates memory using malloc.
  * @b: The number of bytes to be allocated.
@@ -10,8 +12,11 @@
 void *malloc_checked(unsigned int b)
 {
 int *i = NULL;
+
 i = malloc(b);
+
 if (i == NULL)
 exit(98);
+
 return (i);
 }
