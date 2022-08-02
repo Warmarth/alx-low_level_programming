@@ -1,19 +1,4 @@
-#include "1-pi.h"
-#include "1-pi.h"
-#include <stdio.h>
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-
-int main(void)
-{
-float a;
-float r;
-r = 98;
-a = ((r + r)-PI);
-printf("%.3f\n", a);
-return (0);
-}
+#ifndef ABS_H
+#define ABS_H
+#define AB(X) (((X) < 0)?-(X):(X))
+#endif
