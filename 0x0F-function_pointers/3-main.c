@@ -1,39 +1,39 @@
 #include "3-calc.h"
-#include <stdlib.h>
 #include <stdio.h>
-
 /**
- * main - Prints the result of simple operations.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
- *
- * Return: Always 0.
+ * main - entry point
+ * Description: Takes three cli args
+ * in the form A × B, where A and B are ints
+ * and × is an operator
+ * @argc: argument count
+ * @argv: arguments array
+ * Return: 0 for success
  */
 
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char **argv)
 {
-int num1, num2;
-char *op;
+int (*f)(int, int);
+int a, b, res;
 
 if (argc != 4)
 {
 	printf("Error\n");
-	exit(98);
-}
-num1 = atoi(argv[1]);
-op = argv[2];
-num2 = atoi(argv[3]);
+	return (98);
 
-if (get_op_func(op) == NULL || op[1] != '\0')
-{
-	printf("Error\n");
-	exit(99);
+
 }
-if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
+
+a = atoi(argv[1]);
+b = atoi(argv[3]);
+f = get_op_func(argv[2]);
+if (f == NULL)
 {
+
 	printf("Error\n");
-	exit(100);
+	return (99);
 }
-printf("%d\n", get_op_func(op)(num1, num2));
+
+res = f(a, b);
+printf("%d\n", res);
 return (0);
 }
