@@ -19,19 +19,16 @@ list_t *temp;
 new = malloc(sizeof(list_t));
 if (new == NULL)
 	return (NULL);
-
-
 for (d = 0; str[d] != '\0'; d++)
 	count++;
-
 new->len = d;
 new->str = strdup(str);
 new->next = NULL;
 
 if (*head == NULL)
 {
-	*head = new;
-	return (new);
+*head = new;
+return (new);
 }
 
 temp = *head;
@@ -39,6 +36,5 @@ temp = *head;
 for (; temp->next != NULL;)
 	temp = temp->next;
 	temp->next = new;
-
-	return (new);
+return (new);
 }
