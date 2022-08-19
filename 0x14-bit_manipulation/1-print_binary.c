@@ -29,6 +29,7 @@ while (divisor != 0)
 {
 check = n & divisor;
 if (check == divisor)
+{
 flag = 1;
 _putchar('1');
 }
