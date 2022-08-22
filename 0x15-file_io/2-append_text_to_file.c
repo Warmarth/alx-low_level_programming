@@ -10,7 +10,7 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-int id, i = 0, retval = 1;
+int id, f = 0, retval = 1;
 if (!filename)
 	return (-1);
 id = open(filename, O_WRONLY | O_APPEND);
@@ -21,10 +21,10 @@ if (!text_content)
 	close(id);
 	return (1);
 }
-while (text_content[i])
-	i++;
-	retval = write(fd, text_content, i);
-	close(fd);
+while (text_content[f])
+	f++;
+	retval = write(id, text_content, f);
+	close(id);
 if (retval == -1)
 	return (-1);
 	return (1);
