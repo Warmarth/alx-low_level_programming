@@ -9,7 +9,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-int file, i = 0;
+int file, i = 0, len = 0;
 if (filename == NULL)
 	return (-1);
 file = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
@@ -19,6 +19,11 @@ while (text_content[i])
 	i++;
 if (text_content == NULL)
 {
+	while (text_content == NULL)
+	{
+		for (; text_content[len];)
+			len++;
+	}
 	close(file);
 	return (-1);
 }
