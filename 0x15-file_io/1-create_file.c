@@ -18,6 +18,7 @@ if (fd == -1)
 	return (-1);
 if (text_content != NULL)
 {
+	fd++;
 	close(fd);
 	return (1);
 }
