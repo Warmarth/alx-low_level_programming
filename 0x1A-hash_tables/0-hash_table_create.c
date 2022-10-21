@@ -1,26 +1,27 @@
- #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * main - check the code
+ * hash_table_create - Creates a hash table.
+ * @size: The size of the array.
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: If an error occurs - NULL.
+ *         Otherwise - a pointer to the new hash table.
  */
-int main(void)
+hash_table_t *hash_table_create(unsigned long int size)
 {
-    hash_table_t *ht;
+	hash_table_t *ht;
+	unsigned long int i;
 
-    ht = hash_table_create(1024);
-    hash_table_print(ht);
-    hash_table_set(ht, "c", "fun");
-    hash_table_set(ht, "python", "awesome");
-    hash_table_set(ht, "Bob", "and Kris love asm");
-    hash_table_set(ht, "N", "queens");
-    hash_table_set(ht, "Asterix", "Obelix");
-    hash_table_set(ht, "Betty", "Cool");
-    hash_table_set(ht, "98", "Battery Street");
-    hash_table_print(ht);
-    return (EXIT_SUCCESS);
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
+		return (NULL);
+
+	ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
+		return (NULL);
+	for (i = 0; i < size; i++)
+		ht->array[i] = NULL;
+
+	return (ht);
 }
